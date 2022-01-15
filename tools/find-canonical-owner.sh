@@ -13,9 +13,17 @@ repoowner=${2}
   # the literals below need to be adjusted when:
   #  1) the template repo (c756-exer) is renamed;
   #  1) the template repo resides in a different organization than scp756-221); or
+<<<<<<< HEAD
   #  2) the assignment is renamed from "assignments".
 if [[ ${reponame} = "scp756-221/c756-exer" ]]; then
   echo "canonical-owner="${repoowner}
 else
   echo "caonical-owner="${reponame} | sed -e "s/scp756-221\/assignments-//" 
+=======
+  #  2) the assignment is renamed from "assigments". (yes... there is a typo)
+if [[ ${reponame} = "scp756-221/c756-exer" ]]; then
+  echo "canonical-owner="${repoowner}
+else
+  echo "canonical-owner="${reponame} | sed -e "s/scp756-221\/assigments-//" 
+>>>>>>> 666cfb5d7cf155a186bae71685d09a63ca546633
 fi

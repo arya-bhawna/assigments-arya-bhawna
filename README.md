@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-f059dc9a6f8d3a56e377f745f24479a46679e63a5d9fe6f495e02850cd0d8118.svg)](https://classroom.github.com/online_ide?assignment_repo_id=6700161&assignment_repo_type=AssignmentRepo)
+>>>>>>> 666cfb5d7cf155a186bae71685d09a63ca546633
 # SFU CMPT 756 main project directory
 
 This is the course repo for CMPT 756 (Spring 2022)

@@ -9,6 +9,10 @@ on:
       - s2/standalone/Makefile
       - s2/standalone/requirements.txt
       - s2/test/*
+<<<<<<< HEAD
+=======
+      - tools/find-canonical-owner.sh
+>>>>>>> 666cfb5d7cf155a186bae71685d09a63ca546633
       - .github/workflows/ci-a2.yaml
 
 jobs:
@@ -18,10 +22,21 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
+<<<<<<< HEAD
       - name: Instantiate template files
         # For A2, only need ZZ-REG-ID to instantiate s2/standalone/unique_code-tpl.py
         run: |
           sed -e "s/ZZ-REG-ID=.*/ZZ-REG-ID=${{ github.repository_owner }}/" cluster/tpl-vars-blank.txt > cluster/tpl-vars.txt
+=======
+      - name: Determine the canonical owner
+        run: |
+          tools/find-canonical-owner.sh $GITHUB_REPOSITORY ${{ github.repository_owner }} >> $GITHUB_ENV
+
+      - name: Instantiate template files based on the canonical owner
+        # For A2, only need ZZ-REG-ID to instantiate s2/standalone/unique_code-tpl.py
+        run: |
+          sed -e "s/ZZ-REG-ID=.*/ZZ-REG-ID=${{ env.canonical-owner }}/" cluster/tpl-vars-blank.txt > cluster/tpl-vars.txt
+>>>>>>> 666cfb5d7cf155a186bae71685d09a63ca546633
           make -f k8s-tpl.mak templates
 
       - name: Build server
